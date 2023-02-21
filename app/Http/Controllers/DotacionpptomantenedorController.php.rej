@@ -1,0 +1,11 @@
+diff a/app/Http/Controllers/DotacionpptomantenedorController.php b/app/Http/Controllers/DotacionpptomantenedorController.php	(rejected hunks)
+@@ -313,9 +313,6 @@
+ 	}
+ 
+ 	function postMasivo(Request $request, $id =0){
+-
+-		print $request['id'];
+-
+ 		$destinationPath = "uploads/documents/";
+ 
+ 		$lintLevelUser = \MySourcing::LevelUser(\Session::get('uid'));

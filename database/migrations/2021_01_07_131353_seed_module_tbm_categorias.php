@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class SeedModuleTbmCategorias extends Migration
+{
+  static private $gstrModule = "encuestadoscategorias";
+  static private $gstrModuleTitle = "EncuestaDosCategorias";
+  static private $gstrModuleNote = "EncuestaDos";
+  static private $gstrAutor = "gneira";
+  static private $gstrDescription = "";
+  static private $gstrTabla = "tbm_encuestas_categorias_preguntas";
+  static private $gstrPrimarykey = "categoriaPregunta_id";
+  static private $gstrType = "ajax";
+  static private $gstrConfigBase = "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bi9rdXBfcXV3cnk4O4o4LCJsbi9rdXBfdGF4bGU4O4o4LCJsbi9rdXBf6iVmoj24o4w4bG9v6gVwXgZhbHV3oj24o4w46XNfZGVwZWmkZWmjeSoIo4osonN3bGVjdF9tdWx06XBsZSoIojA4LCJ1bWFnZV9tdWx06XBsZSoIojA4LCJsbi9rdXBfZGVwZWmkZWmjeV9rZXk4O4o4LCJwYXR2XgRvXgVwbG9hZCoIo4osonJ3ci3IZV9g6WR06CoIo4osonJ3ci3IZV92ZW3n6HQ4O4o4LCJlcGxvYWRfdH3wZSoIo4osonRvbix06XA4O4o4LCJhdHRy6WJldGU4O4o4LCJ3eHR3bpRfYixhcgM4O4o4fXldLCJncp3koj1beyJp6WVsZCoIopNhdGVnbgJ1YVByZWdlbnRhXi3ko4w4YWx1YXM4O4J0YplfZWmjdWVzdGFzXiNhdGVnbgJ1YXNfcHJ3ZgVudGFzo4w4bGFuZgVhZiU4Ons4ZXM4O4o4LCJwdCoIo4J9LCJsYWJ3bCoIokNhdGVnbgJ1YVByZWdlbnRhoE3ko4w4dp33dyoIMSw4ZGV0YW3soj2xLCJzbgJ0YWJsZSoIMSw4ciVhcpN2oj2xLCJkbgdubG9hZCoIMSw4ZnJvepVuoj2xLCJs6Wl1dGVkoj24o4w4di3kdG54O4oxMDA4LCJhbG3nb4oIopx3ZnQ4LCJzbgJ0bG3zdCoIojA4LCJjbimuoj17onZhbG3koj24MCosopR4oj24o4w46iVmoj24o4w4ZG3zcGxheSoIo4J9LCJpbgJtYXRfYXM4O4o4LCJpbgJtYXRfdpFsdWU4O4o4fSx7opZ1ZWxkoj24cG9uZGVyYWN1bimDYXR3Zi9y6WE4LCJhbG3hcyoIonR4bV93bpNlZXN0YXNfYiF0ZWdvcp3hcl9wcpVndWm0YXM4LCJsYWmndWFnZSoIeyJ3cyoIo3BvbpR3cpFj6VxlMDBpMia5JSosonB0oj24on0sopxhYpVsoj24UG9uZGVyYWN1bimDYXR3Zi9y6WE4LCJi6WVgoj2xLCJkZXRh6Ww4OjEsonNvcnRhYpx3oj2xLCJzZWFyYi54OjEsopRvdimsbiFkoj2xLCJpcp9IZWa4OjEsopx1bW30ZWQ4O4o4LCJg6WR06CoIojEwMCosopFs6Wduoj24bGVpdCosonNvcnRs6XN0oj24MSosopNvbpa4Ons4dpFs6WQ4O4oxo4w4ZGo4O4J0YplfZWmjdWVzdGFfYiF0ZWdvcp3hXgBvbpR3cpFj6W9uo4w46iVmoj24cG9uZGVyYWN1bimDYXR3Zi9y6WFf6WQ4LCJk6XNwbGFmoj24cG9uZGVyYWN1bia4fSw4Zp9ybWF0XiFzoj24o4w4Zp9ybWF0XgZhbHV3oj24on0seyJp6WVsZCoIonR1dHVsb0NhdGVnbgJ1YSosopFs6WFzoj24dGJtXiVuYgV3cgRhcl9jYXR3Zi9y6WFzXgByZWdlbnRhcyosopxhbpdlYWd3oj17opVzoj24VG30dWxvoENhdGVnbgJcdTAwZWRho4w4cHQ4O4o4fSw4bGF4ZWw4O4JU6XRlbG9DYXR3Zi9y6WE4LCJi6WVgoj2xLCJkZXRh6Ww4OjEsonNvcnRhYpx3oj2xLCJzZWFyYi54OjEsopRvdimsbiFkoj2xLCJpcp9IZWa4OjEsopx1bW30ZWQ4O4o4LCJg6WR06CoIojEwMCosopFs6Wduoj24bGVpdCosonNvcnRs6XN0oj24M4osopNvbpa4Ons4dpFs6WQ4O4owo4w4ZGo4O4o4LCJrZXk4O4o4LCJk6XNwbGFmoj24on0sopZvcplhdF9hcyoIo4osopZvcplhdF9iYWxlZSoIo4J9XX0=";
+  static private $gstrMenu = 1;
+
+  public function up()
+  {
+    $lobjModule = array("module_name"=>self::$gstrModule,
+        "module_title"=>self::$gstrModuleTitle,
+        "module_note"=>self::$gstrModuleNote,
+        "module_author"=>self::$gstrAutor,
+        "module_created"=>date("Y-m-d H:i:s"),
+        "module_desc"=>self::$gstrDescription,
+        "module_db"=>self::$gstrTabla,
+        "module_db_key"=>self::$gstrPrimarykey,
+        "module_type"=>self::$gstrType,
+        "module_config"=>self::$gstrConfigBase,
+        "module_lang"=>'',
+    );
+    $lintId = \DB::table('tb_module')->insertGetId($lobjModule);
+    \DB::table('tb_groups_access')->insert(['group_id'=>1,'access_data'=>'{"is_global":"1","is_view":"1","is_detail":"1","is_add":"1","is_edit":"1","is_remove":"1","is_excel":"1"}','module_id'=>$lintId]);
+  }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}
